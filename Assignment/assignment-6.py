@@ -65,17 +65,19 @@ plt.show()
 dataset_url = "https://raw.githubusercontent.com/AnjulaMehto/MCA/main/company_sales_data.csv"
 df_sales = pd.read_csv(dataset_url)
 
+# 1. Line plot of total profit using seaborn
 plt.figure(figsize=(8, 5))
-plt.plot(df_sales['month_number'], df_sales['total_profit'], marker='o', linestyle='-', color='blue')
+sns.lineplot(x='month_number', y='total_profit', data=df_sales, marker='o', color='blue')
 plt.title('Total Profit per Month')
 plt.xlabel('Month')
 plt.ylabel('Total Profit')
 plt.grid()
 plt.show()
 
+# 2. Multi-line plot of all product sales
 plt.figure(figsize=(10, 6))
-for column in df_sales.columns[1:6]:  
-    plt.plot(df_sales['month_number'], df_sales[column], label=column)
+for product in df_sales.columns[1:6]:
+    sns.lineplot(x='month_number', y=product, data=df_sales, label=product)
 plt.title('Product Sales per Month')
 plt.xlabel('Month')
 plt.ylabel('Sales')
@@ -83,10 +85,12 @@ plt.legend()
 plt.grid()
 plt.show()
 
-plt.figure(figsize=(12, 6))
-df_sales.set_index('month_number').plot(kind='bar', figsize=(12, 6))
-plt.title('Sales Data Overview')
+# 3. Bar plot for all features/attributes
+df_melted = df_sales.melt(id_vars=['month_number'], var_name='Product', value_name='Sales')
+plt.figure(figsize=(14, 6))
+sns.barplot(x='month_number', y='Sales', hue='Product', data=df_melted)
+plt.title('Monthly Sales Overview')
 plt.xlabel('Month')
-plt.ylabel('Values')
+plt.ylabel('Sales')
 plt.grid()
 plt.show()
