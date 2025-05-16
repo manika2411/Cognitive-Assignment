@@ -68,3 +68,59 @@ print("Personalized Tax Rate:", tax_rate)
 print("Taxed Sales:", taxed_sales)
 print("Discounted Sales:", discounted_sales)
 print("Weekly Sales Matrix:\n", weekly_sales)
+
+
+# Q4. Generate x values using np.linspace() from -10 to 10 with 100 points. Use
+# each function from the list below and compute y values using NumPy:
+#  Y = x2
+#  Y = sin(x)
+#  Y = ex
+#  Y = log(|x| + 1)
+# Plot the chosen function using Matplotlib. Add title, labels, and grid for clarity. 
+import matplotlib.pyplot as plt
+x = np.linspace(-10, 10, 100)
+y_square = x**2
+y_sin = np.sin(x)
+y_exp = np.exp(x)
+y_log = np.log(np.abs(x) + 1)
+
+# Plotting Y = x^2
+plt.figure(figsize=(8, 5))
+plt.plot(x, y_square, label='y = x^2', color='blue')
+plt.title('Plot of y = x²')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid()
+plt.legend()
+plt.show()
+
+# Plotting Y = sin(x)
+plt.figure(figsize=(8, 5))
+plt.plot(x, y_sin, label='y = sin(x)', color='green')
+plt.title('Plot of y = sin(x)')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid()
+plt.legend()
+plt.show()
+
+# Plotting Y = e^x
+plt.figure(figsize=(8, 5))
+plt.plot(x, y_exp, label='y = e^x', color='red')
+plt.title('Plot of y = e^x')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.ylim([-10, 10000])  
+plt.grid()
+plt.legend()
+plt.show()
+
+# Plotting Y = log(|x| + 1)
+plt.figure(figsize=(8, 5))
+plt.plot(x, y_log, label='y = log(|x| + 1)', color='purple')
+plt.title('Plot of y = log(|x| + 1)')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid()
+plt.legend()
+plt.show()
