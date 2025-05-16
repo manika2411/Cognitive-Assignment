@@ -5,7 +5,7 @@ import seaborn as sns
 
 # Part I: Randomized Sales Data Generation
 # Step 1: Initialize Random Seed
-roll_number = 123456  # Replace with your actual roll number
+roll_number = 7092
 np.random.seed(roll_number)
 
 # Step 2: Generate Sales Data
