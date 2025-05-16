@@ -75,6 +75,9 @@ print(row_percentiles)
 mean_val = np.mean(array)
 median_val = np.median(array)
 std_dev = np.std(array)
+print(mean_val)
+print(median_val)
+print(std_dev)
 
 
 # Q3: NumPy Floor, Ceiling, and Rounding
@@ -83,6 +86,10 @@ floor_vals = np.floor(arr)
 ceil_vals = np.ceil(arr)
 trunc_vals = np.trunc(arr)
 round_vals = np.round(arr)
+print(floor_vals)
+print(ceil_vals)
+print(trunc_vals)
+print(round_vals)
 
 
 # Q4: Swap Two Elements in a List Using a Temporary Variable
