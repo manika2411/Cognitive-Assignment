@@ -61,11 +61,15 @@ array = np.array([[1, -2, 3], [-4, 5, -6]])
 
 # Element-wise absolute value
 abs_values = np.abs(array)
+print(abs_values)
 
 # Percentiles
 percentiles = {p: np.percentile(array, p, axis=None) for p in [25, 50, 75]}
 col_percentiles = {p: np.percentile(array, p, axis=0) for p in [25, 50, 75]}
 row_percentiles = {p: np.percentile(array, p, axis=1) for p in [25, 50, 75]}
+print(percentiles)
+print(col_percentiles)
+print(row_percentiles)
 
 # Mean, Median, and Standard Deviation
 mean_val = np.mean(array)
