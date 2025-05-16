@@ -78,7 +78,14 @@ std_dev = np.std(array)
 print(mean_val)
 print(median_val)
 print(std_dev)
-
+print("Column-wise Stats:")
+print("Mean:", np.mean(array, axis=0))
+print("Median:", np.median(array, axis=0))
+print("Standard Deviation:", np.std(array, axis=0))
+print("Row-wise Stats:")
+print("Mean:", np.mean(array, axis=1))
+print("Median:", np.median(array, axis=1))
+print("Standard Deviation:", np.std(array, axis=1))
 
 # Q3: NumPy Floor, Ceiling, and Rounding
 arr = np.array([-1.8, -1.6, -0.5, 0.5, 1.6, 1.8, 3.0])
